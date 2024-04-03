@@ -1,0 +1,1378 @@
+
+body {
+    margin: 0;
+    font-family: "Font Awesome 6 Pro";
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensure it's above other content */
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.logo img {
+    height: 60px; /* Adjust as needed */
+}
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display:flex;
+}
+
+.navbar ul li {
+    position: relative;
+    margin-right: 20px;
+}
+
+.navbar ul li:last-child {
+    margin-right: 0;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 5px; /* Add padding to create space for the line */
+}
+
+.navbar ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px; /* Adjust the position of the line */
+    left: 0;
+    width: 0;
+    height: 2px; /* Adjust the height of the line */
+    background-color: orangered;
+    transition: width 0.3s ease; /* Add transition for smooth animation */
+}
+
+.navbar ul li:hover a::after {
+    width: 100%; /* Show the line on hover */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    color: orangered;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.search-icon {
+    cursor: pointer;
+    position: relative;
+}
+
+.search-box {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-box input {
+    width: 200px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.contact-btn {
+    background-color: white;
+    border: 2px solid orangered;
+    color: orangered;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.contact-btn:hover {
+    background-color: orangered;
+    color: white;
+}
+
+.btn-search {
+    background: 0 0;
+    border: 0;
+    color: #000;
+    border-radius: initial;
+    padding-left: 0;
+}
+
+
+.fa-search {
+    color: black; /* Adjust the color as needed */
+}
+
+.slider {
+    height: 700px;
+}
+
+.img1 {
+    position: absolute;
+}
+
+.content {
+    position: relative;
+    color: white;
+    padding-top: 20%;
+    padding-left: 5%;
+    padding-bottom: 5%;
+}
+
+.overview,
+.leadership,
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    padding: 2%;
+}
+
+.section1 {
+    height: 300px;
+    overflow: hidden;
+}
+
+.section1 img {
+    transition: transform 0.5s ease;
+}
+
+.section1:hover img {
+    opacity: 0.4;
+    background-color: #ff5100;
+}
+
+.careers {
+    background-color: rgb(197, 193, 193);
+}
+
+.p1 {
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.p2 {
+    font-size: 22px;
+}
+
+.p3 {
+    color: #ff5100;
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.p4 {
+    font-size: 20px;
+}
+
+.about,
+.raw {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 4%;
+    gap: 50px;
+}
+
+.card {
+    padding: 2%;
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 4%;
+    background-image: url('images/pattern-bg.jpg');
+}
+
+.links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2%;
+}
+
+.link1 {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+.link1:hover {
+    color: #ff5100;
+}
+
+.icons {
+    color: orangered;
+    padding: 10px; /* Adjust the padding value as needed */
+}
+
+.slider1 {
+    padding: 2%;
+    background-image: url('images/pattern-bg.jpg');
+}
+
+.img-list {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    font-size: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+   
+}
+
+.img-item {
+    width: 100px;
+    height: 100px;
+    padding: 7%;
+
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.fade-in-left {
+    animation: fadeInLeft 1s ease-out;
+}
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+    header {
+        padding: 20px 10px; /* Adjust padding for smaller screens */
+    }
+
+    .logo img {
+        height: 40px; /* Adjust logo size for smaller screens */
+    }
+
+    .navbar ul li {
+        margin-right: 10px; /* Adjust margin for smaller screens */
+    }
+
+    .search-box input {
+        width: 150px; /* Adjust search input width for smaller screens */
+    }
+
+    .contact-btn {
+        padding: 6px 12px; /* Adjust button padding for smaller screens */
+    }
+}
+
+/* Additional media queries for smaller devices */
+@media screen and (max-width: 512px) {
+    header {
+        padding: 10px; /* Further adjust padding for smaller screens */
+    }
+
+    .logo img {
+        height: 30px; /* Further adjust logo size for smaller screens */
+    }
+
+    .navbar ul {
+        flex-direction: column; /* Stack navbar items vertically */
+        align-items: center; /* Center navbar items */
+    }
+
+    .navbar ul li {
+        margin: 5px 0; /* Adjust margin for smaller screens */
+    }
+
+    .search-box input {
+        width: 100%; /* Full width search input for smaller screens */
+    }
+
+    .contact-btn {
+        padding: 8px; /* Further adjust button padding for smaller screens */
+    }
+}
+
+
+.bt1 {
+    background-color: orangered;
+    border-radius: 20px; /* Adjust the border-radius to control the curve */
+    padding: 10px 20px; /* Adjust the padding to control the size */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.bt1:hover {
+    background-color: white; /* Change the background color on hover */
+    color: orangered;
+}
+
+.careers1 p{
+    font-size: 50px;
+}
+
+.fixed-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    z-index: -1; /* Ensure it's behind other content */
+}
+
+.careers1 {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    margin-top: 360px
+}
+
+.content2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh; /* Set the height to 100% of the viewport height */
+    background-color: white;
+    color: black;
+}
+.orange {
+    color: orangered;
+}
+
+.content p{
+    font-size: 20px;
+}
+
+
+.about1,
+.raw {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 4%;
+    gap: 50px;
+    background-color: white;
+}
+
+.card {
+    padding: 2%;
+}
+
+.button-container {
+    text-align: center;
+    background-color: white;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: rgba(255, 255, 255, 0.501);
+    color: black;
+    text-decoration: none;
+    border: 1px solid black;
+    border-radius: 0;
+    transition: background-color 0.3s;
+    border-color:  rgba(255, 255, 255, 0.501);
+}
+
+.button:hover {
+    background-color: orangered;
+    color: white;
+}
+
+
+.content3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 150vh; /* Set the height to 100% of the viewport height */
+    background-color: white;
+    color: black;
+}
+
+
+.content4 {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    background-color: white;
+    color: black;
+}
+
+.awards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 4%;
+    gap: 50px;
+}
+
+.awards1 {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 25px;
+    padding: 15px;
+    line-height: 1.2;
+}
+
+.p1 {
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.p2 {
+    font-size: 22px;
+}
+
+.p4 {
+    font-size: 20px;
+}
+
+.p9 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.info {
+    padding: 0 4%;
+}
+
+.content4 p {
+    list-style-type: none; /* Remove default list style */
+    padding-left: 1.5em; /* Add some left padding to align with the text */
+    font-size: 20px;
+}
+
+.content4 p strong {
+    font-weight: bold; /* Make the text bold */
+}
+
+.content4 p::before {
+    font-size: 20px;
+    content: "•"; /* Use a bullet point as content */
+    color: orangered; /* Set the color to orange */
+    display: inline-block;
+    width: 1em; /* Adjust the width to align properly with the text */
+    margin-left: -1em;
+    font-size: 10px;
+
+}
+
+.products1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    padding: 2%;
+    background-color: white;
+}
+
+.content5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 40vh; /* Set the height to 100% of the viewport height */
+    background-color: white;
+    color: black;
+}
+
+.bull{
+    font-size: 20px;
+    content: "•"; /* Use a bullet point as content */
+    color: orangered; /* Set the color to orange */
+    display: inline-block;
+    width: 1em; /* Adjust the width to align properly with the text */
+    margin-left: -1em;
+    font-size: 10px;
+}
+
+
+.cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 70vh; /* Set the height to 100% of the viewport height */
+    background-color: white;
+    color: black;
+}
+
+.comp img {
+    max-width: 100%; /* Ensures the image doesn't exceed the container width */
+    height: auto; /* Allows the image to scale proportionally */
+    display: block; /* Ensures the image behaves like a block element */
+    margin: 0 auto; /* Centers the image horizontally within the container */
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh; /* Adjust as needed */
+    background-color: white;
+}
+
+
+video {
+    max-width: 500%;
+    max-height: 400%;
+}
+
+.dropdown-content .nested-dropdown .nested-content {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background-color: #f1f1f1; 
+    padding: 2px; 
+}
+
+
+
+
+.dropdown-content .nested-dropdown:hover .nested-content {
+    display: block;
+}
+
+
+.dropdow-content {
+    display: none;
+    position: fixed;
+    top: 68px;
+    overflow-y: hidden;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f9f9f9;
+    width: 50vw;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+li:hover .dropdow-content {
+    display: block;
+    height: 60vh; 
+    width: 100%; 
+}
+
+
+.dropdow-content ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column; 
+}
+
+.dropdow-content ul li {
+    padding: 10px 10px;
+}
+
+.dropdow-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.ro {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+}
+
+/* Style for the columns */
+.co {
+    text-align: center;
+}
+
+/* Style for the images inside columns */
+.co img {
+    width: 100%;
+    max-width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Style for the text inside columns */
+.co p {
+    margin: 0;
+}
+
+/* Style for the last column */
+.co1 {
+    text-align: center;
+    padding: 85px;
+}
+
+/* Style for the image inside the last column */
+.co1 img {
+    max-width: 325px; /* Set the maximum width of the image */
+    max-height: 200px; /* Set the maximum height of the image */
+    display: block;
+    margin: 0 auto; /* Center the image horizontally */
+}
+
+.pp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 70vh; /* Set the height to 100% of the viewport height */
+    background-color: white;
+    color: black;
+}
+a.tt {
+    color: black; /* Default text color */
+    text-decoration: none; /* Remove default underline */
+     /* Add custom underline */
+  }
+  
+  a.tt:hover {
+    color: pink; /* Change text color to orangered on hover */
+    border-bottom-color: black; /* Change underline color to orange on hover */
+  }
+
+  li.tt {
+    color: black; /* Default text color */
+    text-decoration: none; /* Remove default underline */
+     /* Add custom underline */
+    display: inline; /* Display li elements inline */
+    padding: 0 5px; /* Add padding to separate list items */
+  }
+  li.tt a:hover {
+    color: pink; /* Change text color to orangered on hover */
+    border-bottom-color: orange; /* Change underline color to orange on hover */
+  }
+  
+  
+  
+.about22,
+.raw {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 7%;
+    gap: 35px;
+}
+  
+  
+
+.comp6 img {
+    max-width: 200%; /* Ensures the image doesn't exceed the container width */
+    height: auto; /* Allows the image to scale proportionally */
+    display: block; /* Ensures the image behaves like a block element */
+    margin: 70px auto; /* Centers the image horizontally within the container */
+    background-color: gray;
+}
+
+.lead1 {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.lead2 {
+    display: grid;
+    grid-template-columns: 200px 260px 200px 260px 200px 260px;
+    padding: 2% 9%;
+    overflow: hidden;
+    row-gap: 35px;
+}
+
+.lead3 {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    padding: 2% 8%;
+    overflow: hidden;
+}
+
+.p7 {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.p2 {
+    font-size: 21px;
+}
+
+
+.cont3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 1895vh; /* Set the height to 100% of the viewport height */
+    background-color: white;
+    color: black;
+}
+
+
+.tent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 40vh; /* Set the height to 100% of the viewport height */
+    background-color: white;
+    color: black;
+}
+
+.button-container2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bt6 {
+    background-color: rgb(255, 39, 1);
+    border-radius: 20px; /* Adjust the border-radius to control the curve */
+    padding: 10px 20px; /* Adjust the padding to control the size */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.bt6:hover {
+    background-color: white; /* Change the background color on hover */
+    color: orangered;
+}
+
+
+.slider-cont{
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.slider4 {
+    display: flex;
+    overflow: hidden;
+}
+
+.slide4 {
+    width: 100%;
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+.navigation4 {
+    margin-top: 10px;
+    text-align: center;
+}
+/* 
+button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    background-color: orangered;
+    color: white;
+    border: none;
+    cursor: pointer;
+}  */
+
+
+  form {
+    padding: 20px; /* Adjust the padding as needed */
+    margin-left: 20px; /* Adjust the margin as needed */
+  }
+
+
+.title3{
+    background-color: rgba(243, 239, 239, 0.708);
+    padding: 10px;
+    font-size: 38px;
+}
+
+
+.details{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 40px;
+    padding: 5%;
+}
+
+.p11{
+    font-size: 20px;
+}
+
+
+.form-div{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 3%;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    background-color: white;
+   height: 70vh;
+   margin-left: 40px;
+   margin-right: 40px;
+  
+  }
+  
+.grid-item {
+    position: relative;
+    height: 150px;
+    background-color: lightgrey;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .grid-item:hover {
+    background-color: #bbb; /* Optional: Changes the background color on hover */
+  }
+  
+  .hover-text {
+    position: absolute;
+    bottom: -20px; /* Start below the box */
+    left: 0;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    transform: translateY(20px); /* Initial position */
+  }
+  
+  .grid-item:hover .hover-text {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); /* Slide up effect */
+  }
+  
+  
+  .flip-box {
+    background-color: transparent;
+    perspective: 1000px;
+    height: 30vh;
+  }
+  
+  .flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+  
+  .flip-box-front, .flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+  
+  .flip-box-front {
+    background-color: #efefef;
+    color: black;
+  }
+  
+  .flip-box-back {
+    background-color: orangered;
+    color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .whi{
+    background-color: white;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+  
+  .margin-top-80 {
+    margin-top: 80px;
+  }
+
+  
+.hover-effect {
+    transition: 0.5s;
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    margin: 0 0 10px;
+    width: 100%;
+    height: 100%;
+    float: left;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    background: #ff5100;
+  }
+  
+  
+  .grid-item:hover .hover-effect {
+    bottom: 0;
+  }
+  
+  .grid-container1 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    background-color: white;
+   height: 200vh;
+   margin-left: 150px;
+   margin-right: 150px;
+  
+  }
+
+
+  
+.nt3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 30vh; /* Set the height to 100% of the viewport height */
+    background-color: white;
+    color: black;
+}
+
+.content00 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: white;
+  }
+  
+  .images-container00 {
+    display: flex;
+    align-items: center;
+  }
+  
+  .images-container img {
+    margin-left: 10px;
+  }
+  
+  .try {
+    background-color: orangered;
+    color: white;
+    height: 136px; /* Specify your desired height */
+    width: 1300px; /* Specify your desired width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 100px;
+    margin-right: 100px;
+ 
+
+  }
+ 
+  .buttonx {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: rgba(255, 255, 255, 0.501);
+    color: black;
+    text-decoration: none;
+    border: 1px solid black;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    border-color: rgba(255, 255, 255, 0.501);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Apply shadow */
+  }
+  
+.buttonx:hover {
+    background-color: orangered;
+    color: white;
+}
+
+
+.buttonx:active {
+    background-color: orangered; /* Change background color when button is active (clicked) */
+    color: white; /* Change text color when button is active (clicked) */
+  }
+.hidden {
+    display: none;
+}
+
+#vision, #mission, #values {
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    margin: 30px 0;
+    width: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+    height: 30vh;
+    margin-top: 0px;
+}
+.grid-containerss {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.texts {
+    padding: 20px;
+}
+
+.imagesss img {
+    max-width: 100%;
+    height: 25vh;
+}
+
+
+.slider11{
+    padding: 2%;
+    
+}
+
+/* Keyframes for the animation */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Apply the animation to the img-item class */
+.img-item {
+    flex: 0 0 auto;
+    width: 126px; /* Adjust the width as needed */
+    height: 116px; /* Adjust the height as needed */
+    margin-right: 10px;
+    scroll-snap-align: start;
+    animation: slideInFromLeft 0.5s ease-in-out forwards; /* Use forwards to keep the final state of the animation */
+    opacity: 0; /* Initially hide images */
+    transition: opacity 0.5s ease-in-out;
+
+}
+
+.img-item.visible {
+    opacity: 1; /* Show images */
+}
+
+/* Define keyframes for animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.blog-button {
+    background-color: orangered;
+    color: white;
+    font-size: medium;
+    font-weight: bold;
+    transition: all ease-in-out 0.3s;
+
+}
+
+.blog-button:hover {
+    background-color: white;
+    color: orangered;
+}
+.col1{
+    width: 60%;
+}
+.col2{
+    width: 40%;
+}
+.post-nav {
+    justify-content: center;
+    align-items: center;
+}
+.post-nav, .search-menu .searchform>div {
+    display: flex;
+}
+.post-band .container .row, .post-nav, .press-release-filtered .container .row {
+    opacity: 1;
+    transition: 0.5s;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+/* Post Section Styling */
+.post {
+    margin-bottom: 20px;
+}
+
+.post h1 {
+    justify-content: center;
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 32px;
+}
+
+.post .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 64px;
+    gap: 64px;
+}
+
+.cards {
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.cards:hover {
+    transform: translateY(-5px);
+}
+
+.cards .pic img {
+    width: 100%;
+    height: auto;
+}
+
+.cards .time p,
+.columns .col1 .time p {
+    font-size: 16px;
+    color: #666;
+}
+
+.cards .border-b,
+.columns .col1 .border-b {
+    border-bottom: 1px solid #000;
+    border-top: 1px solid #000;
+}
+
+.cards div,
+.columns .col1 div {
+    padding: 16px;
+}
+
+.cards a,
+.columns .col1 a {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+}
+
+.cards a:hover,
+.columns .col1 a:hover {
+    text-decoration: underline;
+}
+
+.cards .read a,
+.columns .col1 .read a {
+    color: #ff8c00;
+    text-decoration: none;
+    padding: 24px;
+    font-size: 16px;
+}
+
+/* Search Section Styling */
+.columns {
+    display: flex;
+    margin-left: 64px;
+}
+
+.columns .col2 {
+    padding-left: 96px;
+}
+
+.columns .col2 h2 {
+    font-size: 24px;
+    color: #666;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.columns .col2 input[type="search"] {
+    width: 90%;
+    height: 56px;
+    font-size: 24px;
+    padding-right: 56px;
+    border: 1px solid #000;
+    margin-bottom: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .post .grid {
+        grid-template-columns: 1fr;
+        margin: 0 32px;
+    }
+
+    .columns {
+        flex-direction: column;
+        margin-left: 32px;
+    }
+
+    .columns .col2 {
+        padding-left: 0;
+    }
+}
+/* Filter Bar Styles */
+.filter-bar {
+    background-color: #f5f5f5; /* Light grey background */
+    padding: 20px 0; /* Padding around the filter bar for some spacing */
+  }
+  
+  .container {
+    max-width: 1200px; /* Max width of the container, can adjust based on preference */
+    margin: auto; /* Centers the container */
+    padding: 0 15px; /* Padding on the sides */
+  }
+  
+  .row {
+    display: flex; /* Flex display to align columns side by side */
+    flex-wrap: wrap; /* Allows columns to wrap on small screens */
+  }
+  
+  .col-md-12 {
+    flex: 0 0 100%; /* Takes full width on all screen sizes */
+    max-width: 100%; /* Ensures it doesn't exceed its parent's width */
+  }
+  
+  /* Form and Form Elements Styles */
+  form.d-sm-flex {
+    display: flex; /* Display form controls in a row */
+    align-items: center; /* Aligns items vertically in the center */
+    gap: 10px; /* Spacing between form elements */
+  }
+  
+  .label {
+    font-weight: bold; /* Makes the 'Sort by' label bold */
+  }
+  
+  select.colorize {
+    padding: 5px 10px; /* Padding inside the select box */
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #ffffff; /* White background */
+    color: #333333; /* Dark text color for contrast */
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 576px) {
+    form.d-sm-flex {
+      flex-direction: column; /* Stack form elements vertically on small screens */
+      align-items: stretch; /* Stretch items to fill the width */
+    }
+    
+    .label {
+      margin-bottom: 5px; /* Margin below the label when stacked */
+    }
+  }
+  .press-release-filtered .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .col-md-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  
+  .press-release-item {
+    background-color: #f4f4f4;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .press-release-item .post-date {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .press-release-item h2.post-title a {
+    color: #333;
+    text-decoration: none;
+    font-size: 20px;
+  }
+  
+  .btn-out a {
+    display: inline-block;
+    background-color: whitesmoke;
+    color: orangered;
+    padding: 10px 20px;
+    text-decoration: none;
+    
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-out a:hover {
+    background-color: whitesmoke;
+    color: orangered;
+  }
+  
+  .post-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 0;
+  }
+  
+  .nav-num {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+  }
+  
+  .active-nav {
+    background-color: white;
+    color: orangered;
+  }
+  
+  .prev, .next {
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
